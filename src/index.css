@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory-50: #fdfbf7;
+  --color-ivory-100: #f8f6f0;
+  --color-ivory-200: #f0ebe1;
+  --color-ivory-300: #e2dac9;
+  
+  --color-teal-50: #f0fbfb;
+  --color-teal-100: #ccf1f1;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+  
+  --color-mint-500: #10b981;
+  --color-mint-600: #059669;
+
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-ivory-50);
+    color: #1e293b;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Premium utility classes */
+.premium-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.premium-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+.premium-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.premium-btn-primary {
+  background-color: var(--color-teal-800);
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.premium-btn-primary:hover {
+  background-color: var(--color-teal-700);
+  box-shadow: 0 4px 6px -1px rgba(17, 94, 89, 0.2);
+}
+
+.premium-btn-secondary {
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.premium-btn-secondary:hover {
+  background-color: var(--color-ivory-100);
+  border-color: #94a3b8;
+}
+
+.premium-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.premium-input:focus {
+  outline: none;
+  border-color: var(--color-teal-500);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+.scrollbar-horizontal {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+
+.scrollbar-horizontal::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scrollbar-horizontal::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 5px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printable-area, .printable-area * {
+    visibility: visible;
+  }
+  .printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
